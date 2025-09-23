@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { ArrowUp } from "lucide-react"; // icon for button
-import AnimatedBackground from "./components/AnimatedBackground";
+import { ArrowUp } from "lucide-react";
+import { Routes, Route } from "react-router-dom";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -12,9 +12,29 @@ import Projects from "./components/Projects";
 import Publications from "./components/Publications";
 import References from "./components/References";
 import Skills from "./components/Skills";
+import { GitHubNotFound, DemoNotFound, GeneralNotFound } from "./components/Custom404Page";
+import PortfolioLoader from "./components/CustomLoadingPage/";
+import { Suspense } from 'react';
+
+const PortfolioPage = () => (
+  <>
+    <Navbar />
+    <Hero />
+    <Profile />
+    <Experience />
+    <Skills />
+    <Projects />
+    <Education />
+    <Publications />
+    <References />
+    <Contact />
+    <Footer />
+  </>
+);
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Set document title and SEO meta
@@ -71,19 +91,29 @@ const App = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    // If the document is already loaded, skip loader
+    if (document.readyState === "complete") {
+      setLoading(false);
+    } else {
+      // Wait until browser finishes loading scripts, images, fonts, etc.
+      const handleLoad = () => setLoading(false);
+      window.addEventListener("load", handleLoad);
+
+      return () => window.removeEventListener("load", handleLoad);
+    }
+  }, []);
+
+   if (loading) return <PortfolioLoader />;
+
   return (
     <div className="min-h-screen bg-white relative">
-      <Navbar />
-      <Hero />
-      <Profile />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Education />
-      <Publications />
-      <References />
-      <Contact />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<PortfolioPage />} />
+        <Route path="/not-available/github/:project" element={<GitHubNotFound />} />
+        <Route path="/not-available/demo/:project" element={<DemoNotFound />} />
+        <Route path="*" element={<GeneralNotFound projectName="This page" />} />
+      </Routes>
 
       {/* Back to Top Button */}
       {showButton && (

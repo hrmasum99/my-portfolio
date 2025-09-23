@@ -5,6 +5,8 @@ import HeroImage from '../assets/Hero.JPG';
 
 const Hero = () => {
   const [text, setText] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const fullText = "Software Engineer | Full Stack Developer | Researcher";
   
   useEffect(() => {
@@ -19,6 +21,22 @@ const Hero = () => {
     
     return () => clearInterval(timer);
   }, []);
+
+  const handleDownload = () => {
+    setLoading(true);
+
+    const link = document.createElement("a");
+    link.href = "/My_CV.pdf";
+    link.download = "Habibur_Rahman_Masum_CV.pdf";
+
+    // Clean up loader quickly (since browser handles download natively)
+    link.onclick = () => setLoading(false);
+    setTimeout(() => setLoading(false), 1200);
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
@@ -51,13 +69,12 @@ const Hero = () => {
                 }}>
                   View My Work
                 </button>
-                <a
-                  href="/My_CV.pdf" // place CV inside "public" folder
-                  download="Habibur_Rahman_Masum_CV.pdf"
+                <button
+                  onClick={handleDownload}
                   className="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-purple-900 rounded-full font-semibold transition-all duration-300 text-center"
                 >
                   Download Resume
-                </a>
+                </button>
               </div>
             </div>
           </div>

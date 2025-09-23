@@ -1,11 +1,59 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Github, ExternalLink } from 'lucide-react';
 import EventBuddyImg from '../assets/event-buddy.png';
 import EISPImg from '../assets/eisp.png';
 import TaskManagerImg from '../assets/task-manager.png';
 import CharityImg from '../assets/charity.jpg';
 import EventMGTImg from '../assets/event-management.jpg';
+import { GitHubNotFound, DemoNotFound } from './Custom404Page';
 
 const Projects = () => {
+  const navigate = useNavigate();
+   const [showError, setShowError] = useState({ type: null, project: null });
+   const [loading, setLoading] = useState(false);
+
+    const handleLinkClick = (url, type, projectName) => {
+    if (url === "#" || !url) {
+    // Redirect to error route
+    navigate(`/not-available/${type}/${encodeURIComponent(projectName)}`);
+    return;
+  }
+
+    setLoading(true);
+
+    try {
+      const newTab = window.open(url, "_blank");
+
+      if (!newTab) {
+        setLoading(false);
+        alert("Please allow popups to open project links.");
+        return;
+      }
+
+      // Fallback: hide loader after ~1.5s (since cross-origin links can’t be tracked)
+      setTimeout(() => setLoading(false), 1500);
+    } catch (err) {
+      setLoading(false);
+      console.error("Error opening link:", err);
+    }
+  };
+
+
+  if (showError.type) {
+    return showError.type === "github" ? (
+      <GitHubNotFound
+        projectName={showError.project}
+        onGoBack={() => setShowError({ type: null, project: null })}
+      />
+    ) : (
+      <DemoNotFound
+        projectName={showError.project}
+        onGoBack={() => setShowError({ type: null, project: null })}
+      />
+    );
+  }
+
   const projects = [
     {
       title: "Event-buddy",
@@ -21,7 +69,7 @@ const Projects = () => {
       image: EISPImg,
       technologies: ["NestJs", "Next.js", "PostgreSQL", "JWT"],
       github: "https://github.com/hrmasum99/event-buddy",
-      live: "https://eisp-com.vercel.app"
+      live: "https://eisp-com.app"
     },
     // {
     //   title: "E-Commerce Platform",
@@ -113,20 +161,22 @@ const Projects = () => {
 
                 {/* Always sticks to bottom */}
                 <div className="flex justify-between mt-auto">
-                  <a
-                    href={project.github}
+                  <button
+                    onClick={() =>
+                      handleLinkClick(project.github, "github", project.title)
+                    }
                     className="flex items-center text-gray-600 hover:text-purple-600 transition-colors"
                   >
-                    <Github className="w-4 h-4 mr-1" />
-                    Code
-                  </a>
-                  <a
-                    href={project.live}
+                    <Github className="w-4 h-4 mr-1" /> Code
+                  </button>
+                  <button
+                    onClick={() =>
+                      handleLinkClick(project.live, "demo", project.title)
+                    }
                     className="flex items-center text-gray-600 hover:text-purple-600 transition-colors"
                   >
-                    <ExternalLink className="w-4 h-4 mr-1" />
-                    Live Demo
-                  </a>
+                    <ExternalLink className="w-4 h-4 mr-1" /> Live Demo
+                  </button>
                 </div>
               </div>
             </div>
