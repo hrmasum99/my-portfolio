@@ -3,26 +3,26 @@ import { ExternalLink } from 'lucide-react';
 const Publications = () => {
   const publications = [
     {
-      title: "Modern React Patterns: A Comprehensive Guide",
-      journal: "Tech Weekly",
+      title: "A Multimodal Deep Learning Framework for Integrating Visual, Textual, and Categorical Features in Retail Price Estimation",
+      journal: "Array",
+      year: "2025",
+      description: "This thesis presents a multimodal deep learning framework for retail price estimation. It leverages product images, descriptions, and categorical data to develop and compare two distinct model architectures: the Functional API and the Sequential API, ultimately aiming to find a balance between accuracy and computational efficiency.",
+      link: "#"
+    },
+    {
+      title: "Smart Home and Garden Management System with Environmental Monitoring and Automation",
+      journal: "Conference: 2025 IEEE International Conference on Quantum Photonics, Artificial Intelligence, and Networking (QPAIN 2025)",
+      year: "2025",
+      description: "This project presents a smart home and garden management system using an Arduino Nano ESP32 and multiple sensors to monitor and automate environmental conditions. The system allows for remote and voice control of devices like lights and fans via Alexa and Arduino IoT Cloud. It aims to reduce manual effort and improve the safety, efficiency, and cost-effectiveness of home and garden management.",
+      link: "https://www.researchgate.net/publication/394160939_Smart_Home_and_Garden_Management_System_with_Environmental_Monitoring_and_Automation"
+    },
+    {
+      title: "Smart Home Cleaning Automation: A GSM Integrated Autonomous Robot for Efficient Household Maintenance",
+      journal: "27th International Conference on Computer and Information Technology (ICCIT 2024)",
       year: "2024",
-      description: "An in-depth analysis of modern React patterns and best practices for scalable applications.",
-      link: "#"
+      description: "This paper details a GSM-integrated autonomous cleaning robot that uses an Arduino Uno and various sensors to navigate and clean homes efficiently. Its key feature is a GSM module that enables users to remotely control the robot via SMS commands, allowing for real-time monitoring and control of cleaning operations. The system enhances user convenience and provides a reliable solution for automated household maintenance.",
+      link: "https://www.researchgate.net/publication/389591993_Smart_Home_Cleaning_Automation_A_GSM_Integrated_Autonomous_Robot_for_Efficient_Household_Maintenance"
     },
-    {
-      title: "Optimizing Web Performance with Modern Tools",
-      journal: "Frontend Masters Blog",
-      year: "2023",
-      description: "Strategies and techniques for improving web application performance using modern development tools.",
-      link: "#"
-    },
-    {
-      title: "The Future of Full-Stack Development",
-      journal: "Dev.to",
-      year: "2023",
-      description: "Exploring emerging trends and technologies shaping the future of full-stack web development.",
-      link: "#"
-    }
   ];
 
   return (

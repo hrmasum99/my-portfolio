@@ -26,7 +26,7 @@ const PortfolioPage = () => (
     <Projects />
     <Education />
     <Publications />
-    <References />
+    {/* <References /> */}
     <Contact />
     <Footer />
   </>

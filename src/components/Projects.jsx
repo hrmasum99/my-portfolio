@@ -6,6 +6,7 @@ import EISPImg from '../assets/eisp.png';
 import TaskManagerImg from '../assets/task-manager.png';
 import CharityImg from '../assets/charity.jpg';
 import EventMGTImg from '../assets/event-management.jpg';
+import DeptStoreImg from '../assets/departmental-store.jpg';
 import { GitHubNotFound, DemoNotFound } from './Custom404Page';
 
 const Projects = () => {
@@ -92,15 +93,15 @@ const Projects = () => {
       description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
       image: TaskManagerImg,
       technologies: ["Next.js", "Socket.io", "Go", "MySQL"],
-      github: "#",
-      live: "#"
+      github: "https://github.com/hrmasum99/task-manager",
+      live: "https://task-manager-com.netlify.app/"
     },
     {
       title: "Public Fund and Welfare Management System",
       description: "A desktop based charity platform with .NET Framework. This desktop application allows users to donate funds for social events and contribute as volunteers. The platform acts as a centralized system for efficiently managing events, donations, sponsors, and volunteers.",
       image: CharityImg,
       technologies: ["C#", ".NET Framework", "Winforms", "SQL Server"],
-      github: "#",
+      github: "https://github.com/hrmasum99/Public-Fund-And-Welfare-Management-System",
       live: "#"
     },
     {
@@ -108,7 +109,15 @@ const Projects = () => {
       description: "A Web platform allows users to register, create, view, and manage events, send RSVP reminders via email, and integrate Google Maps for event locations using a .NET Web API backend.",
       image: EventMGTImg,
       technologies: ["ASP.NET MVC", "Web API", "SQL Server", "SOLID", "n-tier architecture"],
-      github: "#",
+      github: "https://github.com/hrmasum99/Dot-NET/tree/master/Event%20Management",
+      live: "#"
+    },
+    {
+      title: "Departmental Store Management System",
+      description: "The Departmental Store Management System is a Java-based application that manages products, employees, and categories like Dairy, Bakery, Fruits, Vegetables, and Home Care, ensuring efficient store operations and inventory tracking. ",
+      image: DeptStoreImg,
+      technologies: ["Java", "OOP Concept"],
+      github: "https://github.com/hrmasum99/Departmental-Store-Management-System",
       live: "#"
     },
     // {
@@ -142,43 +151,43 @@ const Projects = () => {
               />
 
               {/* Card body as flex column */}
-              <div className="flex flex-col justify-between flex-1 p-6">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 truncate">{project.description}</p>
+              <div className="flex flex-col flex-1 p-6">
+                <h3 className="text-xl font-bold mb-3 truncate">{project.title}</h3>
+                <p className="mb-4 line-clamp-5 text-gray-600">{project.description}</p>
 
+                {/* Always sticks to bottom */}
+                <div className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-sm"
+                        className="px-2 py-1 text-sm rounded bg-purple-100 text-purple-700"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                </div>
-
-                {/* Always sticks to bottom */}
-                <div className="flex justify-between mt-auto">
-                  <button
-                    onClick={() =>
-                      handleLinkClick(project.github, "github", project.title)
-                    }
-                    className="flex items-center text-gray-600 hover:text-purple-600 transition-colors"
-                  >
-                    <Github className="w-4 h-4 mr-1" /> Code
-                  </button>
-                  <button
-                    onClick={() =>
-                      handleLinkClick(project.live, "demo", project.title)
-                    }
-                    className="flex items-center text-gray-600 hover:text-purple-600 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-1" /> Live Demo
-                  </button>
+                  <div className="flex justify-between">
+                    <button
+                      onClick={() =>
+                        handleLinkClick(project.github, "github", project.title)
+                      }
+                      className="flex items-center hover:text-purple-600"
+                    >
+                      <Github className="w-4 h-4 mr-1" /> Code
+                    </button>
+                    <button
+                      onClick={() =>
+                        handleLinkClick(project.live, "demo", project.title)
+                      }
+                      className="flex items-center hover:text-purple-600"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-1" /> Live Demo
+                    </button>
+                  </div>
                 </div>
               </div>
+
             </div>
           ))}
         </div>
