@@ -6,7 +6,7 @@ const Publications = () => {
       title: "A Multimodal Deep Learning Framework for Integrating Visual, Textual, and Categorical Features in Retail Price Estimation",
       journal: "Array",
       year: "2025",
-      description: "This thesis presents a multimodal deep learning framework for retail price estimation. It leverages product images, descriptions, and categorical data to develop and compare two distinct model architectures: the Functional API and the Sequential API, ultimately aiming to find a balance between accuracy and computational efficiency.",
+      description: "This article presents a multimodal deep learning framework for retail price estimation. It leverages product images, descriptions, and categorical data to develop and compare two distinct model architectures: the Functional API and the Sequential API, ultimately aiming to find a balance between accuracy and computational efficiency.",
       link: "#"
     },
     {

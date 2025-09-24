@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
-      <div className="max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[96rem] mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <h1 className="text-xl font-bold text-purple-600">Masum</h1>
@@ -76,7 +76,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
+            <div className="ml-5 flex items-center space-x-3">
 
               {/* Home */}
               <button

@@ -9,10 +9,10 @@ const Profile = () => {
           <div className="w-24 h-1 bg-purple-600 mx-auto"></div>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="text-center md:text-left transform hover:scale-105 transition-all duration-300">
-            <div className="w-120 mx-auto md:mx-0 rounded-lg bg-gradient-to-r from-purple-400 to-pink-400 p-1 mb-8">
-              <img src={Masum} alt="Profile Image" className="w-full h-full rounded-sm bg-gray-300 flex items-center justify-center text-8xl"/>
+            <div className="max-w-xs md:max-w-sm lg:max-w-md mx-auto  rounded-lg bg-gradient-to-r from-purple-400 to-pink-400 p-1 mb-8">
+              <img src={Masum} alt="Profile Image" className="w-full rounded-sm bg-gray-300"/>
             </div>
           </div>
           
