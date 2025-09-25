@@ -15,11 +15,11 @@ const Projects = () => {
    const [loading, setLoading] = useState(false);
 
     const handleLinkClick = (url, type, projectName) => {
-    if (url === "#" || !url) {
-    // Redirect to error route
-    navigate(`/not-available/${type}/${encodeURIComponent(projectName)}`);
-    return;
-  }
+      if (url === "#" || !url) {
+      // Redirect to error route
+      navigate(`/not-available/${type}/${encodeURIComponent(projectName)}`);
+      return;
+    }
 
     setLoading(true);
 
