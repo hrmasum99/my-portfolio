@@ -32,6 +32,10 @@ const Profile = () => {
               When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
               or sharing knowledge through technical writing and mentoring.
             </p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Should You Hire Me?</h3>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              I think that you must choose me because I’m very dedicated and passionate about backend development and I have a deep interested to learn problem solving through real-world projects. I know pretty much about JavaScript and NestJs (a Node.js framework), and I've used tools like VS Code, Postman, and Git in my projects and my workspace. I like to solve problems, I learn things quickly, and I'm always trying to learn new technologies to make myself better. Considering my continuous improvement, I am dedicated, responsible, and excited to be part of your team and solve real-world problems.
+            </p>
             
             <div className="grid grid-cols-2 gap-6">
               <div>

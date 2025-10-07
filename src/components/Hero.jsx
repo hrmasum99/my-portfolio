@@ -50,7 +50,7 @@ const Hero = () => {
                 <img src={HeroImage} alt="Hero image" className="w-full h-full rounded-full"/>
               </div>
            </div>
-            <div className='w-3/4 text-start'>
+            <div className='w-full md:w-3/4 text-start '>
               <h3 className="text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-4 animate-fade-in">
                 Hi There! It's 
               </h3>

@@ -132,7 +132,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-20 bg-gray-50">
-      <div className="max-w-[96rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[96rem] mx-auto px-6 sm:px-10 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
           <div className="w-24 h-1 bg-purple-600 mx-auto"></div>
@@ -151,7 +151,7 @@ const Projects = () => {
               />
 
               {/* Card body as flex column */}
-              <div className="flex flex-col flex-1 p-6">
+              <div className="flex flex-col flex-1 p-4 md:p-6">
                 <h3 className="text-xl font-bold mb-3 truncate">{project.title}</h3>
                 <p className="mb-4 line-clamp-5 text-gray-600">{project.description}</p>
 
