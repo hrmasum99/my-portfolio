@@ -16,17 +16,19 @@ const Experience = () => {
     //   description: "Developed responsive web applications and collaborated with UX/UI teams to create intuitive user interfaces.",
     //   achievements: ["Built 10+ responsive websites", "Reduced load time by 60%", "Implemented modern design systems"]
     // },
-    // {
-    //   title: "Junior Web Developer",
-    //   company: "StartupXYZ",
-    //   period: "2019 - 2020",
-    //   description: "Started career developing small-scale applications and learning modern web development practices.",
-    //   achievements: ["Delivered 5+ client projects", "Learned React and Node.js", "Contributed to open source"]
-    // }, 
+    {
+      title: "Back-End Developer",
+      company: "ShafaCode",
+      period: "December 2025 - Present",
+      description: "Developing scalable backend APIs and services as a Backend Developer at ShafaCode. This fully remote role emphasizes building high-quality, performant software solutions.",
+      achievements: [ 
+        //"Delivered 5+ client projects", "Learned NestJs and Node.js", "Contributed to open source"
+      ]
+    }, 
     {
       title: "Front-End Developer Intern",
       company: "Workspace Infotech Limited",
-      period: "June 2025 - Present",
+      period: "June 2025 - October 2025",
       description: "Collaborated with senior software engineers, participated in code reviews, and followed industry’s best practices. Enhanced skills in front-end development, debugging, state management, REST API integration, and version control (Git).",
       achievements: ["Contributed to ERP project", "Learned React and Next.js", "Improved UI consistency and performance."]
     }
